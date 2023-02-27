@@ -64,4 +64,27 @@
          
 
   4. Call the ***showWeatherInfo()*** and pass the String to it:
-     - After that we call the methods ***getTemperature(), getHumidity(), getWindSpeed(), getDirection()***,  one after the other to parse trough String by **JSON** Methods and output asked information. 
+
+     - After that we call the methods ***getTemperature(), getHumidity(), getWindSpeed(), getDirection()***,  one after the other to parse trough String by **JSON** Methods and output asked information. we see one of these function bodies in the picture below:
+
+       ![image-20230227041606896](C:\Users\Datis\AppData\Roaming\Typora\typora-user-images\image-20230227041606896.png)
+
+
+
+
+
+**Testing and Evaluation:**
+
+1. Input the city name:
+
+   ![image-20230227040832729](C:\Users\Datis\AppData\Roaming\Typora\typora-user-images\image-20230227040832729.png)
+
+2. Wait a few seconds and as you can see in the picture below the data comes up:
+
+   ![image-20230227040934413](C:\Users\Datis\AppData\Roaming\Typora\typora-user-images\image-20230227040934413.png)
+
+3. Now let's test a special case that our **city** doesn't exist and see what happens:
+
+   ![image-20230227041212738](C:\Users\Datis\AppData\Roaming\Typora\typora-user-images\image-20230227041212738.png)		
+
+4. As you can see in the picture above nothing has been shown because **"sare ghabram"** does not exist in **API** cities.
