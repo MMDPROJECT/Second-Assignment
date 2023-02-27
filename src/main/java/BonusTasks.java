@@ -14,8 +14,15 @@ public class BonusTasks
         System.out.println("Enter the city: ");
         String city = input.nextLine();
 
-        String weatherJson = getWeatherData(city);
-        showWeatherInfo(weatherJson);
+        if (getWeatherData(city) != null)
+        {
+            String weatherJson = getWeatherData(city);
+            showWeatherInfo(weatherJson);
+        }
+        else
+        {
+            System.out.print("No information found!");
+        }
     }
 
     public static String getWeatherData(String city)
@@ -37,7 +44,6 @@ public class BonusTasks
         }
         catch (Exception e)
         {
-            e.printStackTrace();
             return null;
         }
     }
