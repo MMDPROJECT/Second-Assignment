@@ -41,33 +41,127 @@
 
 - **Describing code line by line:**
 
-  1. Setting up our **API KEY**.
+  1. Set up **API KEY**.
 
-     ![image-20230227033440026](C:\Users\Datis\AppData\Roaming\Typora\typora-user-images\image-20230227033440026.png)
+     ```java
+     public class BonusTasks
+     {
+         public final static String apiKey = "4559ae7bd83f44d5ba911803232502";
+         ......
+     }
+     ```
+
+     
 
     2. Input city name from user.
 
-       ![image-20230227033529136](C:\Users\Datis\AppData\Roaming\Typora\typora-user-images\image-20230227034358704.png)
+       
 
-  		3. Call ***getWeatherData()*** to establish a connection to API and return the String containing all data.
+       ```java
+       public static void main(String[] args)
+           {
+               Scanner input = new Scanner(System.in);
+               System.out.println("Enter the city: ");
+               String city = input.nextLine();
+               .......
+           }
+          
+       ```
+  
+  
+  
+  
+  
+  3. Call **getWeatherData()** to establish a connection to API and return the String containing all data.
+  
+  
+  
+  ```java
+  public static void main(String[] args)
+  {
+  	......
+  	......
+  	if (getWeatherData(city) != null)
+          {
+              String weatherJson = getWeatherData(city);
+              showWeatherInfo(weatherJson);
+          }
+          else
+          {
+              System.out.print("No information found!");
+          }
+  }
+  
+  public static String getWeatherData(String city)
+      {
+          try
+          {
+              URL url = new URL("http://api.weatherapi.com/v1/current.json?key=" + apiKey + "&q=" + city);
+              HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+              connection.setRequestMethod("GET");
+              BufferedReader reader = new BufferedReader(new 					InputStreamReader(connection.getInputStream()));
+              StringBuilder stringBuilder = new StringBuilder();
+              String line;
+              while ((line = reader.readLine()) != null)
+              {
+                  stringBuilder.append(line);
+              }
+              reader.close();
+              return stringBuilder.toString();
+          }
+          catch (Exception e)
+          {
+              return null;
+          }
+      }
+  ```
+  
+  
+  
+  
+  
+  - For that we first set our **URL** to a specified format like the picture above and establish a connection to that.
+  
+  - Then  we have set the requestMethod to *"**GET**"*.
+  
+  - Insert data that we read from connection stream in a Buffered reader and append it line by line to StringBuilder.
+  
+  - Close the connection and our buffer, Then return the String builder as a String.
+  
+    
+  
+  - Call the ***showWeatherInfo()*** and pass the String to it:
+  
+     - After that we call the methods ***getTemperature(), getHumidity(), getWindSpeed(), getDirection()***,  one after the other to parse trough String by **JSON** Methods and output asked information. 
 
-       ![image-20230227033829693](C:\Users\Datis\AppData\Roaming\Typora\typora-user-images\image-20230227033829693.png)
 
-       - For that we first set our **URL** to a specified format like the picture above and establish a connection to that.
 
-       - Then  we have set the requestMethod to *"**GET**"*.
-
-       - Insert data that we read from connection stream in a Buffered reader and append it line by line to StringBuilder.
-
-       - Close the connection and our buffer, Then return the String builder as a String.
-
-         
-
-  4. Call the ***showWeatherInfo()*** and pass the String to it:
-
-     - After that we call the methods ***getTemperature(), getHumidity(), getWindSpeed(), getDirection()***,  one after the other to parse trough String by **JSON** Methods and output asked information. we see one of these function bodies in the picture below:
-
-       ![image-20230227041606896](C:\Users\Datis\AppData\Roaming\Typora\typora-user-images\image-20230227041606896.png)
+```java
+public static double getTemperature(String weatherJson)
+{
+    JSONObject jsonObject = new JSONObject(weatherJson);
+    double answer = jsonObject.getJSONObject("current").getDouble("temp_c");
+    return answer;
+}
+public static int getHumidity(String weatherJson)
+{
+    JSONObject jsonObject = new JSONObject(weatherJson);
+    int answer = jsonObject.getJSONObject("current").getInt("humidity");
+    return answer;
+}
+public static double getWindSpeed (String weatherJson)
+{
+    JSONObject jsonObject = new JSONObject(weatherJson);
+    double answer = jsonObject.getJSONObject("current").getDouble("wind_kph");
+    return answer;
+}
+public static String getDirection (String weatherJson)
+{
+    JSONObject jsonObject = new JSONObject(weatherJson);
+    String answer = jsonObject.getJSONObject("current").getString("wind_dir");
+    return answer;
+}
+```
 
 
 
@@ -76,6 +170,8 @@
 **Testing and Evaluation:**
 
 1. Input the city name:
+
+   
 
    ![image-20230227040832729](C:\Users\Datis\AppData\Roaming\Typora\typora-user-images\image-20230227040832729.png)
 
