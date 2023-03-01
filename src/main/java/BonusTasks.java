@@ -3,6 +3,8 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import org.json.JSONObject;
+
+import javax.swing.*;
 import java.util.Scanner;
 
 public class BonusTasks
@@ -81,7 +83,6 @@ public class BonusTasks
         double wind_speed = getWindSpeed(weatherJson);
 
         String wind_direction = getDirection(weatherJson);
-
-        System.out.print("temperature: " + temperature + "\n" + "humidity percentage: " + humidity + "\n" + "wind speed: " + wind_speed + "\n" + "wind direction: " + wind_direction);
+        GUI gui = new GUI(String.valueOf(temperature), String.valueOf(humidity), String.valueOf(wind_speed), wind_direction);
     }
 }
