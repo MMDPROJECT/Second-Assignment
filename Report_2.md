@@ -1,10 +1,10 @@
-![](J:\JavaHomework\WeatherAPI\Resources\image-20230225235244334.png)
+![](Resources\image-20230225235244334.png)
 
-										# 					   SECOND ASSIGNMENT REPORT
+# 					  					  SECOND ASSIGNMENT REPORT
 
 ​						
 
-## 						Mohammad Hossein Basouli          401222020
+## 												 						  Mohammad Hossein Basouli     401222020
 
 
 
@@ -267,14 +267,14 @@ public class GUI
 
    
 
-   ![](J:\JavaHomework\WeatherAPI\Resources\image-20230227040832729.png)
+   ![](Resources\image-20230227040832729.png)
 
 2. Wait a few seconds and as you can see that a window comes up and information showed in:
 
-   ![](J:\JavaHomework\WeatherAPI\Resources\image-20230301214457442.png)
+   ![](Resources\image-20230301214457442.png)
 
 3. Now let's test a special case that our **city** doesn't exist and see what happens:
 
-   ![](J:\JavaHomework\WeatherAPI\Resources\image-20230227041212738.png)		
+   ![](Resources\image-20230227041212738.png)		
 
 4. As you can see in the picture above nothing has been shown because **"sare ghabram"** does not exist in **API** cities.
