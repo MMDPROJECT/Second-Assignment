@@ -1,16 +1,14 @@
-![image-20230227030757318](C:\Users\Datis\AppData\Roaming\Typora\typora-user-images\image-20230227030757318.png)
+![](J:\JavaHomework\WeatherAPI\Resources\image-20230225235244334.png)
 
-​																					**SECOND ASSIGNMENT** **REPORT**									
+										# 					   SECOND ASSIGNMENT REPORT
 
-​										**Mohammad Hossein Basouli** 																	**401222020**
+​						
 
-
-
-
+## 						Mohammad Hossein Basouli          401222020
 
 
 
-
+​									
 
 
 
@@ -22,24 +20,35 @@
 
 
 
-**Introduction:**
 
-- **A brief description of the this program:**
+
+
+
+
+
+
+
+## **Introduction:**
+
+- #### **A brief description of the this program:**
+  
   - Write a program to prompt the user name of a **city** and output some information about it's weather.
-- **Objectives:**
+- #### **Objectives:**
+  
   1. Getting familiar with **JSON**.
   2. Learn how to establish a **HTTP Connection** to a **API**.
   3. Parsing desired data from **JSON**.
-- **An overview of the approach has taken to complete assignment:**
+- #### **An overview of the approach has taken to complete assignment:**
+  
   1. Establish a **HTTP Connection** to **API**.
   2. drop the data retrieved from **API** to a Buffered Reader and then append it line by line to a StringBuilder. After that we return it as a String.
   3. Call a function to split desired data into parts by **JSON** and output that.
 
 
 
-**Design and Implementation:**
+## **Design and Implementation:**
 
-- **Describing code line by line:**
+- #### **Describing code line by line:**
 
   1. Set up **API KEY**.
 
@@ -252,20 +261,20 @@ public class GUI
     }
 ```
 
-**Testing and Evaluation:**
+## **Testing and Evaluation:**
 
 1. Input the city name:
 
    
 
-   ![image-20230227040832729](C:\Users\Datis\AppData\Roaming\Typora\typora-user-images\image-20230227040832729.png)
+   ![](J:\JavaHomework\WeatherAPI\Resources\image-20230227040832729.png)
 
 2. Wait a few seconds and as you can see that a window comes up and information showed in:
 
-   ![image-20230301214457442](C:\Users\Datis\AppData\Roaming\Typora\typora-user-images\image-20230301214457442.png)
+   ![](J:\JavaHomework\WeatherAPI\Resources\image-20230301214457442.png)
 
 3. Now let's test a special case that our **city** doesn't exist and see what happens:
 
-   ![image-20230227041212738](C:\Users\Datis\AppData\Roaming\Typora\typora-user-images\image-20230227041212738.png)		
+   ![](J:\JavaHomework\WeatherAPI\Resources\image-20230227041212738.png)		
 
 4. As you can see in the picture above nothing has been shown because **"sare ghabram"** does not exist in **API** cities.
